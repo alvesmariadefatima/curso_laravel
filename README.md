@@ -1,66 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# HDC Events
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Bem-vindo ao HDC Events! Este projeto foi desenvolvido para facilitar a criação e gestão de eventos, utilizando as tecnologias Laravel no backend e Bootstrap no frontend. O sistema permite realizar operações CRUD (Create, Read, Update e Delete) para gerenciar eventos de maneira eficiente. Além disso, o projeto implementa a ferramenta JetStream para tornar o dashboard mais interativo e fornecer funcionalidades de autenticação e cadastro de usuários.
 
-## About Laravel
+## Visão Geral
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Tecnologias Utilizadas
+- **Backend**: Laravel
+- **Frontend**: Bootstrap
+- **Dashboard**: JetStream
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Funcionalidades Principais
+- **CRUD de Eventos**: Criação, leitura, atualização e exclusão de eventos.
+- **Autenticação e Cadastro**: Usuários podem se registrar e fazer login para gerenciar seus eventos.
+- **Dashboard Interativo**: JetStream é utilizado para criar uma interface de usuário moderna e interativa.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalação
 
-## Learning Laravel
+### Pré-requisitos
+- PHP >= 7.3
+- Composer
+- Node.js
+- NPM/Yarn
+- MySQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Passo a Passo
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/curso_laravel.git
+   cd hdc-events
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Instale as dependências do PHP**
+   ```bash
+   composer install
+   ```
 
-## Laravel Sponsors
+3. **Instale as dependências do Node.js**
+   ```bash
+   npm install
+   ou
+   yarn install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+4. **Copie o arquivo de exemplo `.env` e configure suas variáveis de ambiente**
+   ```bash
+   cp .env.example .env
+   ```
 
-### Premium Partners
+5. **Gere a chave da aplicação**
+   ```bash
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+6. **Configure o banco de dados no arquivo `.env`**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=hdc_events
+   DB_USERNAME=seu_usuario
+   DB_PASSWORD=sua_senha
+   ```
 
-## Contributing
+7. **Execute as migrações do banco de dados**
+   ```bash
+   php artisan migrate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+8. **Compile os assets do frontend**
+   ```bash
+   npm run dev
+   ou
+   yarn dev
+   ```
 
-## Code of Conduct
+9. **Inicie o servidor de desenvolvimento**
+   ```bash
+   php artisan serve
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Acesse a aplicação em `http://localhost:8000`.
 
-## Security Vulnerabilities
+## Estrutura do Projeto
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Backend
 
-## License
+- **Laravel**: Framework PHP utilizado para criar a lógica de backend e gerenciar a comunicação com o banco de dados.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Frontend
+
+- **Bootstrap**: Framework CSS utilizado para estilizar a interface do usuário, garantindo um design responsivo e moderno.
+
+### Dashboard
+
+- **JetStream**: Pacote Laravel que fornece funcionalidades avançadas de autenticação e uma interface de usuário dinâmica para o dashboard.
+
+## Funcionalidades Detalhadas
+
+### CRUD de Eventos
+- **Criar Evento**: Permite aos usuários criar novos eventos preenchendo um formulário com detalhes como nome, descrição, data e local.
+- **Listar Eventos**: Exibe uma lista de todos os eventos cadastrados, com opções para visualizar detalhes.
+- **Editar Evento**: Permite aos usuários atualizar informações de um evento existente.
+- **Deletar Evento**: Permite aos usuários excluir um evento da lista.
+
+### Autenticação e Cadastro
+- **Registro de Usuário**: Novo usuário pode se cadastrar fornecendo nome, email e senha.
+- **Login**: Usuários existentes podem fazer login com email e senha.
+- **Esqueci minha senha**: Opção para recuperação de senha via email.
+
+### Dashboard Interativo
+- **JetStream**: Fornece uma interface de usuário moderna com suporte a temas, integração com Tailwind CSS, e funcionalidades como gerenciamento de perfil e autenticação de dois fatores.
